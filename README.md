@@ -57,3 +57,8 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## CONFIGURACION PROYECTO TASKMANAGERFRONT
+
+Para poder ejecutar el Frontend se debe ejecutar el comando npm i para realizar todas las actualizaciones correspondientes, se debe adicionar el paquete ng add @angular/material, se recomienda verificar desde el terminal estar ubicado en el proyecto, en este caso el ejemplo es  C:\Users\acer\Desktop\TaskManagerFront\taskManager>

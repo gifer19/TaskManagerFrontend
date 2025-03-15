@@ -1,0 +1,29 @@
+<div class="mat-elevation-z2" style="width: 30%; padding: 30px; margin: 50px auto; display: flex;justify-content: center;">
+  <title> Registro de Tareas</title>
+  <form [formGroup]="formTask">
+      <div class="flex">
+          <mat-form-field>
+              <mat-label>Titulo</mat-label>
+              <input matInput  formControlName="titleTask">
+            </mat-form-field>
+      </div>
+      <div class="flex">
+          <mat-form-field>
+              <mat-label>Descripcion</mat-label>
+              <input matInput  formControlName="descriptionTask">
+            </mat-form-field>
+      </div>
+      <div class="flex">
+          <mat-form-field>
+              <mat-label>Estado</mat-label>
+              <input matInput type="text"  formControlName="stateTask">
+            </mat-form-field>
+      </div>
+      <div class="flex">
+          <button mat-flat-button color="primary" (click)="saveTask()">Guardar</button>
+          <button mat-flat-button color="warn" (click)="backTask()" style="margin-left: 8px;">Volver</button>
+      </div>
+
+  </form>
+
+</div>
