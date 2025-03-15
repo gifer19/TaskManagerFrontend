@@ -62,3 +62,87 @@ For more information on using the Angular CLI, including detailed command refere
 ## CONFIGURACION PROYECTO TASKMANAGERFRONT
 
 Para poder ejecutar el Frontend se debe ejecutar el comando npm i para realizar todas las actualizaciones correspondientes, se debe adicionar el paquete ng add @angular/material, se recomienda verificar desde el terminal estar ubicado en el proyecto, en este caso el ejemplo es  C:\Users\acer\Desktop\TaskManagerFront\taskManager>
+
+## EJECUTAR EN SQL SERVER
+reate database DBTaskM
+
+
+GO
+
+use DBTaskM
+
+create proc sp_listTask
+as
+begin
+	select
+	idTask,
+	titleTask,
+	stateTask
+	from Task
+end
+
+go
+
+create proc sp_getTask(
+@IdTask int 
+)
+as
+begin
+	select
+	idTask,
+	titleTask,
+	descripctionTask
+	stateTask
+	from Task where idTask=@IdTask
+end
+
+go
+
+create proc sp_createTask(
+@TitleTask varchar(50),
+@Descripcion varchar (100),
+@State varchar (50)
+)
+as
+begin
+
+INSERT INTO Task
+           (titleTask
+           ,descripctionTask
+           ,stateTask)
+     VALUES
+           (@TitleTask,
+            @Descripcion,
+            @State)
+
+end 
+go
+
+create proc sp_updateTask(
+@IdTask int,
+@TitleTask varchar(50),
+@DescriptionTask varchar (100),
+@State varchar (50)
+)
+as
+begin
+
+        Update Task
+		set
+           titleTask = @TitleTask,
+           descripctionTask = @Descripcion,
+           stateTask = @State
+		where idTask = @IdTask
+     
+end 
+
+go 
+create proc sp_deleteTask(
+@IdTask int
+)
+as
+begin
+     delete from Task
+		where idTask = @IdTask
+     
+end 
